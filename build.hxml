@@ -1,0 +1,5 @@
+--class-path src
+--neko bot.n
+--main Main
+--library hxdiscord
+--cmd neko bot.n
