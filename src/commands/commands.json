@@ -1,0 +1,27 @@
+{
+    "name": "rock",
+    "type": 1,
+    "description": "Sends a picture of a rock",
+    "options": [
+        {
+            "name": "type",
+            "description": "Type of rock",
+            "type": 3,
+            "required": true,
+            "choices": [
+                {
+                    "name": "Igneous",
+                    "value": "rock_igneous"
+                },
+                {
+                    "name": "Sedimentary",
+                    "value": "rock_sedimentary"
+                },
+                {
+                    "name": "Metamorphic",
+                    "value": "rock_metamorphic"
+                }
+            ]
+        }
+    ]
+ }
