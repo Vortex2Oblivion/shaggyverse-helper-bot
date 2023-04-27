@@ -1,5 +1,6 @@
 package;
 
+import commands.BotCommand;
 import tokens.Token;
 import hxdiscord.DiscordClient;
 import hxdiscord.utils.Intents;
@@ -13,15 +14,20 @@ class Main
         Bot = new DiscordClient(Token.token, [Intents.ALL], false);
         Bot.onReady = onReady;
         Bot.onMessageCreate = onMessageCreate;
+        
     }
 
     public static function onReady()
     {
         trace("The bot is ready");
-		if (sys.FileSystem.exists("src/commands/commands.json"))
-			Bot.setInteractionCommands(haxe.Json.parse(sys.io.File.getContent("src/commands/commands.json")));
-        else
-            haxe.macro.Context.error('Failed to load json', haxe.macro.Context.currentPos());
+        var commandName = new BotCommand("command", "description");
+        Bot.setInteractionCommands([commandName]);
+        Bot.onInteractionCreate = (i:Interaction) -> {
+            switch(i.name) {
+               case "command":
+                   i.reply({content:"Hello world!"}, true);
+            }
+        }
     }
 
     public static function onMessageCreate(m:Message)
@@ -30,5 +36,5 @@ class Main
             m.reply({content:"Hello!"}, true);
         else if (m.content == ":doblez:")
             m.reply({content:":doblez:"}, true);
-}
+    }
 }
