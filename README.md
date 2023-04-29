@@ -1,5 +1,8 @@
 ### Shaggyverse Helper
 
+![](https://img.shields.io/github/repo-size/Vortex2Oblivion/shaggyverse-helper-bot) ![](https://badgen.net/github/open-issues/Vortex2Oblivion/shaggyverse-helper-bot) ![](https://badgen.net/badge/license/MIT/green)
+[![CI](https://img.shields.io/github/actions/workflow/status/Vortex2Oblivion/shaggyverse-helper-bot/main.yml?branch=master&logo=github)](https://github.com/Vortex2Oblivion/shaggyverse-helper-bot/actions?query=workflow%3ACI)
+
 A small project to help benefit the Shaggyverse Discord server with various resources
 
 I reccomend building to neko
