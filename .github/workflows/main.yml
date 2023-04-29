@@ -1,0 +1,58 @@
+name: CI build
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  Windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: true
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.0
+
+      - name: Compiling 
+        run: |
+          haxelib --quiet install hxdiscord
+          haxe build.hxml
+  Mac:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: true
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.0
+
+      - name: Compiling 
+        run: |
+          haxelib --quiet install hxdiscord
+          haxe build.hxml
+  Linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: true
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.0
+
+      - name: Compiling 
+        run: |
+          haxelib --quiet install hxdiscord
+          haxe build.hxml
