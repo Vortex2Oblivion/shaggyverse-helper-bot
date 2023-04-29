@@ -1,6 +1,5 @@
 package;
 
-import commands.BotCommand;
 import tokens.Token;
 import hxdiscord.DiscordClient;
 import hxdiscord.utils.Intents;
@@ -9,6 +8,8 @@ import hxdiscord.types.*;
 class Main
 {
     static var Bot:DiscordClient;
+    
+    var doblezValue:Int;
     static function main()
     {
         Bot = new DiscordClient(Token.token, [Intents.ALL], false);
@@ -20,21 +21,23 @@ class Main
     public static function onReady()
     {
         trace("The bot is ready");
-        var commandName = new BotCommand("command", "description");
-        Bot.setInteractionCommands([commandName]);
+
+        
+        var doblez:ApplicationCommand = new ApplicationCommand();
+        doblez.setName("doblez");
+        doblez.setDescription("Generates a random doblez shaggy");  
+        Bot.setInteractionCommands([doblez]);
         Bot.onInteractionCreate = (i:Interaction) -> {
             switch(i.name) {
-               case "command":
-                   i.reply({content:"Hello world!"}, true);
+               case "doblez":
+                   i.reply({content:"https://media.discordapp.net/attachments/1047586547068850408/1096317250304229466/lv_0_20230413233608.gif"}, false);
             }
-        }
+      }
     }
 
     public static function onMessageCreate(m:Message)
     {
         if (m.content == "hi")
             m.reply({content:"Hello!"}, true);
-        else if (m.content == ":doblez:")
-            m.reply({content:":doblez:"}, true);
     }
 }
