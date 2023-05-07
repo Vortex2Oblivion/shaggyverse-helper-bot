@@ -27,10 +27,16 @@ class Main
         doblez.setName("doblez");
         doblez.setDescription("Generates a random doblez shaggy");  
         Bot.setInteractionCommands([doblez]);
+        var winis:ApplicationCommand = new ApplicationCommand();
+        winis.setName("winis");
+        winis.setDescription("Ping winisrecs");  
+        Bot.setInteractionCommands([doblez, winis]);
         Bot.onInteractionCreate = (i:Interaction) -> {
             switch(i.name) {
-               case "doblez":
-                   i.reply({content:"https://media.discordapp.net/attachments/1047586547068850408/1096317250304229466/lv_0_20230413233608.gif"}, false);
+                case "doblez":
+                    i.reply({content:"https://media.discordapp.net/attachments/1047586547068850408/1096317250304229466/lv_0_20230413233608.gif"}, false);
+                case "winis":
+                    i.reply({content:"<@750845956790026291>"}, false);
             }
       }
     }
