@@ -45,5 +45,7 @@ class Main
     {
         if (m.content == "hi")
             m.reply({content:"Hello!"}, true);
+        if (m.content == "google en passant")
+            m.reply({content:"holy hell!"}, true);
     }
 }
