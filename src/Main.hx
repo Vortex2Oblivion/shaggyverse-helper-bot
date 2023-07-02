@@ -26,17 +26,21 @@ class Main
         var doblez:ApplicationCommand = new ApplicationCommand();
         doblez.setName("doblez");
         doblez.setDescription("Generates a random doblez shaggy");  
-        Bot.setInteractionCommands([doblez]);
         var winis:ApplicationCommand = new ApplicationCommand();
         winis.setName("winis");
         winis.setDescription("Ping winisrecs");  
-        Bot.setInteractionCommands([doblez, winis]);
+        var blahaj:ApplicationCommand = new ApplicationCommand();
+        blahaj.setName("blahaj");
+        blahaj.setDescription("Send a picture of a blahaj"); 
+        Bot.setInteractionCommands([doblez, winis, blahaj]);
         Bot.onInteractionCreate = (i:Interaction) -> {
             switch(i.name) {
                 case "doblez":
                     i.reply({content:"https://media.discordapp.net/attachments/1047586547068850408/1096317250304229466/lv_0_20230413233608.gif"}, false);
                 case "winis":
                     i.reply({content:"<@750845956790026291>"}, false);
+                 case "blahaj":
+                    i.reply({content:"https://tenor.com/view/blahaj-go-spinny-blahaj-blahaj-spin-spin-shark-spin-gif-25670993"}, false);
             }
       }
     }
@@ -45,7 +49,5 @@ class Main
     {
         if (m.content == "hi")
             m.reply({content:"Hello!"}, true);
-        if (m.content == "google en passant")
-            m.reply({content:"holy hell!"}, true);
     }
 }
