@@ -1,5 +1,3 @@
 package commands.image;
 
-class Blahaj {
-    
-}
+class Blahaj extends Command {}

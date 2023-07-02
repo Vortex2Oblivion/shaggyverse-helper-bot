@@ -8,8 +8,12 @@ import hxdiscord.types.*;
 class Main
 {
     static var Bot:DiscordClient;
+    static var bytes:Int;
+    static inline var RANGE_MAX = 6;
     
-    var doblezValue:Int;
+    static var shonkArray:Array<String> = ["https://tenor.com/view/blahaj-go-spinny-blahaj-blahaj-spin-spin-shark-spin-gif-25670993", "https://tenor.com/view/ikea-blahaj-doll-spinning-shark-gif-18118200",
+     "https://tenor.com/view/blahaj-gif-27048745", "https://tenor.com/view/bl%C3%A5haj-ikea-shark-blahaj-plush-blueshark-gif-23751698", "https://tenor.com/view/blahaj-pat-blahaj-pat-pat-blahaj-pat-pat-ikea-gif-25589385",
+    "https://tenor.com/view/blahaj-bl%C3%A5haj-flip-tricks-cute-gif-26139318", "https://tenor.com/view/rgb-blahaj-ikea-shark-cyber-gif-26784548"];
     static function main()
     {
         Bot = new DiscordClient(Token.token, [Intents.ALL], false);
@@ -40,7 +44,10 @@ class Main
                 case "winis":
                     i.reply({content:"<@750845956790026291>"}, false);
                  case "blahaj":
-                    i.reply({content:"https://tenor.com/view/blahaj-go-spinny-blahaj-blahaj-spin-spin-shark-spin-gif-25670993"}, false);
+                    bytes = Math.floor(Math.random() * (RANGE_MAX + 1));
+		  
+                    trace(bytes);
+                    i.reply({content:shonkArray[bytes]}, false);
             }
       }
     }
