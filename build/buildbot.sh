@@ -1,1 +1,2 @@
+cd ..
 haxe build.hxml

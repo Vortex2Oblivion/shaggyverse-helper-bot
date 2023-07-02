@@ -1,1 +1,2 @@
+cd ..
 neko bot.n
